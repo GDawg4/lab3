@@ -8,6 +8,8 @@ import android.widget.ListView
 
 class MenuActivity : AppCompatActivity() {
 
+    public class MenuAdapter:ArrayAdapter<>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu2)
