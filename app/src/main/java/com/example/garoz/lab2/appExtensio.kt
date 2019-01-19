@@ -3,12 +3,11 @@ package com.example.garoz.lab2
 import android.app.Application
 
 class appExtensio:Application() {
-    companion object:MenuOrder {
+
+    companion object : MenuOrder {
         var menu = ArrayList<String>()
 
-        
-
-        override var menuOrder: ArrayList<String> = ArrayList<String>()
+        override var menuOrder: ArrayList<String> = ArrayList()
         override fun clear() {
             this.menuOrder.clear()
         }
