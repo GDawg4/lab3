@@ -1,5 +1,11 @@
 package com.example.garoz.lab2
 
+/**
+ * Actividad principal de primera pantalla
+ *
+ * @author Rodrigo Garoz
+ */
+
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +22,9 @@ class MainActivity : AppCompatActivity() {
         val menuButton = findViewById<Button>(R.id.buttonShowMenu)
         val orderButton = findViewById<Button>(R.id.buttonOrder)
 
+        /**
+         * Botones para abrir las nuevas actividades
+         */
         menuButton.setOnClickListener {
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)

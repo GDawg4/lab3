@@ -2,12 +2,21 @@ package com.example.garoz.lab2
 
 import android.app.Application
 
+/**
+ * Clase para poder acceder globalemente a interfaz
+ *
+ */
 class appExtensio:Application() {
 
+    /**
+     * Objeto donde se guarda la orden actual
+     */
     companion object : MenuOrder {
-        var menu = ArrayList<String>()
 
         override var menuOrder: ArrayList<String> = ArrayList()
+        /**
+         * Métodos para quitar y guardar elementos en la orden
+         */
         override fun clear() {
             this.menuOrder.clear()
         }
@@ -21,8 +30,6 @@ class appExtensio:Application() {
         }
 
         override fun done() {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
-
     }
 }
