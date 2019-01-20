@@ -26,7 +26,7 @@ class appExtensio:Application() {
         }
 
         override fun del(elementIndex: Int) {
-            this.menuOrder[elementIndex].drop(elementIndex)
+            this.menuOrder.removeAt(elementIndex)
         }
 
         override fun done() {

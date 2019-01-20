@@ -41,6 +41,13 @@ class OrderActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        listView.setOnItemLongClickListener { _, _, position, _ ->
+            appExtensio.del(position) //Se quita de la lista global lista global
+            listView.invalidateViews()
+            var toast = Toast.makeText(applicationContext, "Elemento borrado", Toast.LENGTH_SHORT)
+            toast.show()//Se muestra mensaje confirmando evento
+            true
+        }
         /**
          * Al presionar el botón de limpiar o hacer pedido se limpia la lista
          * Se muestra el toast apropiado

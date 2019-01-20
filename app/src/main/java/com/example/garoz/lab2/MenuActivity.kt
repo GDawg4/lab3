@@ -47,7 +47,7 @@ class MenuActivity : AppCompatActivity() {
          */
         listView.setOnItemClickListener { _, _, position, _ ->
             val selectedItem = itemsList[position]
-            appExtensio.add(selectedItem) //Se une a lista globak
+            appExtensio.add(selectedItem) //Se une a lista global
             val text = "Agregado $selectedItem"
             val toast = Toast.makeText(applicationContext, text, Toast.LENGTH_SHORT)
             toast.show() //Se muestra toast apropiado
