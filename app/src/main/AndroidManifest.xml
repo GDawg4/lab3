@@ -3,10 +3,10 @@
     package="com.example.garoz.lab2">
 
     <application
-        android:name=".appExtensio"
+        android:name=".appExtension"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Restaurante Los Primos"
+        android:label="Contactos"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -18,7 +18,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuActivity" />
-        <activity android:name=".OrderActivity"></activity>
+        <activity android:name=".OrderActivity" />
+        <activity android:name=".ContactsActivity" />
+        <activity android:name=".OneContactActivity"></activity>
     </application>
 
 </manifest>

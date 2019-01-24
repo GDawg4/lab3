@@ -4,8 +4,16 @@
 
     <TextView
         android:id="@+id/itemName"
-        android:layout_width="397dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Name"
         android:textAppearance="@android:style/TextAppearance.Holo.Large" />
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="phoneNumber" />
+
 </LinearLayout>

@@ -14,24 +14,26 @@ import android.widget.Button
 import android.widget.ListView
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var listView: ListView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val menuButton = findViewById<Button>(R.id.buttonShowMenu)
-        val orderButton = findViewById<Button>(R.id.buttonOrder)
+        val newContact = findViewById<Button>(R.id.newContactButton)
+        listView = findViewById(R.id.contactView)
 
-        /**
-         * Botones para abrir las nuevas actividades
-         */
-        menuButton.setOnClickListener {
-            val intent = Intent(this, MenuActivity::class.java)
+        listView.adapter = ItemAdapter(applicationContext, appExtension.allContacts)
+
+        newContact.setOnClickListener {
+            val intent = Intent(this, ContactsActivity::class.java)
             startActivity(intent)
         }
-
-        orderButton.setOnClickListener {
-            val intent = Intent(this, OrderActivity::class.java)
+        listView.setOnItemClickListener { _, _, position, _ ->
+            val intent = Intent(this, OneContactActivity::class.java)
+            intent.putExtra("name", appExtension.allContacts[position].name)
+            intent.putExtra("number", appExtension.allContacts[position].number)
+            intent.putExtra("emai", appExtension.allContacts[position].email)
             startActivity(intent)
         }
     }

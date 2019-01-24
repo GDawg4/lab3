@@ -1,5 +1,6 @@
 package com.example.garoz.lab2
 
+import android.app.Person
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +13,7 @@ import android.widget.TextView
  */
 
 class ItemAdapter(private val context: Context,
-                  private val dataSource: ArrayList<String>):BaseAdapter() {
+                  private val dataSource: ArrayList<appExtension.Companion.Contact>):BaseAdapter() {
 
     /**
      * Inflador para layout con objetos del menú
@@ -39,12 +40,12 @@ class ItemAdapter(private val context: Context,
         val rowView = inflater.inflate(R.layout.oneitem, parent, false)
 
         val titleTextView = rowView.findViewById(R.id.itemName) as TextView
+        val numberTextView = rowView.findViewById(R.id.number) as TextView
 
-        val recipe = getItem(position) as String
+        val recipe = getItem(position) as appExtension.Companion.Contact
 
-        titleTextView.text = recipe
-
-
+        titleTextView.text = recipe.name
+        numberTextView.text = recipe.number.toString()
         return rowView
     }
 }
