@@ -29,11 +29,15 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ContactsActivity::class.java)
             startActivity(intent)
         }
+
+        /**
+         * Cada vez que se hace click sobre un objeto, se envía su información a nueva actividad
+         */
         listView.setOnItemClickListener { _, _, position, _ ->
             val intent = Intent(this, OneContactActivity::class.java)
             intent.putExtra("name", appExtension.allContacts[position].name)
             intent.putExtra("number", appExtension.allContacts[position].number)
-            intent.putExtra("emai", appExtension.allContacts[position].email)
+            intent.putExtra("email", appExtension.allContacts[position].email)
             startActivity(intent)
         }
     }

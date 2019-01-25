@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.garoz.lab2">
 
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
     <application
         android:name=".appExtension"
         android:allowBackup="true"
@@ -20,7 +22,8 @@
         <activity android:name=".MenuActivity" />
         <activity android:name=".OrderActivity" />
         <activity android:name=".ContactsActivity" />
-        <activity android:name=".OneContactActivity"></activity>
+        <activity android:name=".OneContactActivity" />
+        <activity android:name=".EmailActivity"></activity>
     </application>
 
 </manifest>

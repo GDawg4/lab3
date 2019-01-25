@@ -24,14 +24,26 @@ class ContactsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        /**
+         * Al agregar un nuevo contacto se vacían los campos
+         */
         addContact.setOnClickListener {
-            val newContact = appExtension.Companion.Contact(
-                    newContactName.text.toString(),
-                    Integer.parseInt(newContactPhone.text.toString()),
-                    newContactEmail.text.toString()
-            )
-            appExtension.allContacts.add(newContact)
-            Toast.makeText(applicationContext, "Contacto agregado", Toast.LENGTH_SHORT).show()
+            try {
+                val newContact = appExtension.Companion.Contact(
+                        newContactName.text.toString(),
+                        Integer.parseInt(newContactPhone.text.toString()),
+                        newContactEmail.text.toString()
+                )
+                appExtension.allContacts.add(newContact)
+                Toast.makeText(applicationContext, "Contacto agregado", Toast.LENGTH_SHORT).show()
+                newContactEmail.text = ""
+                newContactName.text = ""
+                newContactPhone.text = ""
+
+            }catch (e: NumberFormatException){ // en caso no sea válido el número
+                Toast.makeText(this, "Número de teléfono no válido", Toast.LENGTH_LONG).show()
+            }
+
         }
     }
 }

@@ -9,7 +9,7 @@ import android.app.Application
 class appExtension:Application() {
 
     /**
-     * Objeto donde se guarda la orden actual
+     * Objeto donde se guardan todos los contactos actuales
      */
     companion object {
         val allContacts:ArrayList<Contact> = ArrayList()
